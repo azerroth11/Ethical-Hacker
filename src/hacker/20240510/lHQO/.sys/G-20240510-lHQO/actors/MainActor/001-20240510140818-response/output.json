@@ -1,0 +1,19 @@
+{
+  "id" : "chatcmpl-44bd164b-ffb2-4305-8ceb-68148d85b167",
+  "object" : "chat.completion",
+  "created" : 1715342901,
+  "model" : "mixtral-8x7b-32768",
+  "choices" : [ {
+    "message" : {
+      "role" : "assistant",
+      "content" : "Here are the patches:\n\n### Main.java\n```diff\n package hacker;\n\n import java.io.*;\n import java.net.Socket;\n\n public class Main {\n-\tpublic static void main(String[] args) {\n-\t\ttry (Socket socket = new Socket(args[0], Integer.parseInt(args[1])); DataInputStream input = new DataInputStream(socket.getInputStream()); DataOutputStream output = new DataOutputStream(socket.getOutputStream())) {\n-\t\t\tgeneratePassword(input, output);\n-\t\t} catch (IOException e) {\n-\t\t\te.printStackTrace();\n-\t\t}\n-\t}\n+\tpublic static void main(String[] args) {\n+\t\tString host = args[0];\n+\t\tint port = Integer.parseInt(args[1]);\n+\t\tSocket socket = new Socket(host, port);\n+\t\tDataInputStream input = new DataInputStream(socket.getInputStream());\n+\t\tDataOutputStream output = new DataOutputStream(socket.getOutputStream());\n+\t\ttry {\n+\t\t\tgeneratePassword(input, output);\n+\t\t} catch (IOException e) {\n+\t\t\te.printStackTrace();\n+\t\t} finally {\n+\t\t\ttry {\n+\t\t\t\tinput.close();\n+\t\t\t\toutput.close();\n+\t\t\t\tsocket.close();\n+\t\t\t} catch (IOException e) {\n+\t\t\t\te.printStackTrace();\n+\t\t\t}\n+\t\t}\n+\t}\n\n \tpublic static void generatePassword(DataInputStream input, DataOutputStream output) throws IOException {\n \t\tboolean foundPassword = false;\n \t\tchar[] characters = (\"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz\").toCharArray();\n \t\tString password = \"0\";\n \t\toutput.writeUTF(password);\n-\t\tinput.readUTF();\n+\t\tString response = input.readUTF();\n \t\twhile (! foundPassword) {\n \t\t\tfor (int i = 0; i < password.length(); i++) {\n \t\t\t\tfor (char d : characters) {\n \t\t\t\t\tchar[] passwordChars = password.toCharArray();\n \t\t\t\t\tpasswordChars[0] = d;\n \t\t\t\t\tfor (char e : characters) {\n \t\t\t\t\t\tpasswordChars[i] = e;\n \t\t\t\t\t\tpassword = new String(passwordChars);\n \t\t\t\t\t\toutput.writeUTF(password);\n-\t\t\t\t\t\tif (input.readUTF().equals(\"Connection success!\")) {\n+\t\t\t\t\t\tif (input.readUTF().equals(response)) {\n \t\t\t\t\t\t\tfoundPassword = true;\n \t\t\t\t\t\t\tSystem.out.println(password);\n \t\t\t\t\t\t\tbreak;\n \t\t\t\t\t\t}\n \t\t\t\t\t}\n \t\t\t\t}\n \t\t\t}\n \t\t\tpassword += characters[0];\n \t\t\tif (password.length() > 4) {\n \t\t\t\tSystem.out.println(\"Too many tries\");\n \t\t\t\tbreak;\n \t\t\t}\n \t\t}\n \t}\n }\n```"
+    },
+    "index" : 0,
+    "finish_reason" : "stop"
+  } ],
+  "usage" : {
+    "prompt_tokens" : 1367,
+    "completion_tokens" : 810,
+    "total_tokens" : 2177
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id" : "chatcmpl-e6e954ed-d27d-4ae0-b75c-5ae2064f736f",
+  "object" : "chat.completion",
+  "created" : 1715342990,
+  "model" : "mixtral-8x7b-32768",
+  "choices" : [ {
+    "message" : {
+      "role" : "assistant",
+      "content" : "Here are the patches:\n\n### Main.java\n```diff\n--- hacker/Main.java\n+++ hacker/Main.java\n@@ -1,5 +1,6 @@\n package hacker;\n\n import java.io.*;\n import java.net.Socket;\n+import java.util.Scanner;\n\n public class Main {\n \tpublic static void main(String[] args) {\n@@ -11,6 +12,10 @@\n \t\tSocket socket = new Socket(host, port);\n \t\tDataInputStream input = new DataInputStream(socket.getInputStream());\n \t\tDataOutputStream output = new DataOutputStream(socket.getOutputStream());\n+\n+\t\tScanner scanner = new Scanner(System.in);\n+\t\tSystem.out.print(\"Enter the server's response: \");\n+\t\tString response = scanner.nextLine();\n \t\ttry {\n \t\t\tgeneratePassword(input, output, response);\n \t\t} catch (IOException e) {\n```\n\n### Main.java\n```diff\n--- hacker/Main.java\n+++ hacker/Main.java\n@@ -31,6 +31,7 @@\n \t\t\t\tfor (char e : characters) {\n \t\t\t\t\tpasswordChars[i] = e;\n \t\t\t\t\tpassword = new String(passwordChars);\n+\t\t\t\t\toutput.flush();\n \t\t\t\t\toutput.writeUTF(password);\n \t\t\t\t\tif (input.readUTF().equals(response)) {\n \t\t\t\t\t\tfoundPassword = true;\n```\n\n### Main.java\n```diff\n--- hacker/Main.java\n+++ hacker/Main.java\n@@ -41,6 +42,7 @@\n \t\t\t\t\t\tfoundPassword = true;\n \t\t\t\t\t\tSystem.out.println(password);\n \t\t\t\t\t\tbreak;\n+\t\t\t\t\t}\n \t\t\t\t}\n \t\t\t}\n \t\t}\n```\n\n### Main.java\n```diff\n--- hacker/Main.java\n+++ hacker/Main.java\n@@ -50,6 +52,7 @@\n \t\t\tpassword += characters[0];\n \t\t\tif (password.length() > 4) {\n \t\t\t\tSystem.out.println(\"Too many tries\");\n+\t\t\t\tbreak;\n \t\t\t}\n \t\t}\n \t}\n```"
+    },
+    "index" : 0,
+    "finish_reason" : "stop"
+  } ],
+  "usage" : {
+    "prompt_tokens" : 1456,
+    "completion_tokens" : 607,
+    "total_tokens" : 2063
+  }
+}

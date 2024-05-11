@@ -1,0 +1,19 @@
+[ [ {
+  "role" : "user",
+  "content" : [ {
+    "type" : "text",
+    "text" : "test"
+  } ]
+}, {
+  "role" : "assistant",
+  "content" : [ {
+    "type" : "text",
+    "text" : "<div><div class=\"tabs-container\">\n<div class=\"tabs\">\n<button class=\"tab-button active\" data-for-tab=\"HTML\">HTML</button>\n<button class=\"tab-button\" data-for-tab=\"Markdown\">Markdown</button>\n<button class=\"tab-button\" data-for-tab=\"Hide\">Hide</button>\n</div>\n<div class=\"tab-content active\" data-tab=\"HTML\">\n<p>Here are the patches:</p>\n<h3>Main.java</h3>\n<div class=\"tabs-container\">\n<div class=\"tabs\">\n<button class=\"tab-button active\" data-for-tab=\"Diff\">Diff</button>\n<button class=\"tab-button\" data-for-tab=\"Code\">Code</button>\n<button class=\"tab-button\" data-for-tab=\"Preview\">Preview</button>\n<button class=\"tab-button\" data-for-tab=\"Echo\">Echo</button>\n</div>\n<div class=\"tab-content active\" data-tab=\"Diff\">\n<div id=\"zdhvxm\"></div>\n</div>\n<div class=\"tab-content\" data-tab=\"Code\">\n<div id=\"zggbsh\"></div>\n</div>\n<div class=\"tab-content\" data-tab=\"Preview\">\n<div id=\"znmxpt\"></div>\n</div>\n<div class=\"tab-content\" data-tab=\"Echo\">\n<div id=\"zqjgnk\"></div>\n</div>\n</div>\n<div id=\"zxuxcr\"></div>\n\n</div>\n<div class=\"tab-content\" data-tab=\"Markdown\">\n<pre><code class=\"language-markdown\">Here are the patches:\n\n### Main.java\n&lt;div class=\"tabs-container\"&gt;\n&lt;div class=\"tabs\"&gt;\n&lt;button class=\"tab-button active\" data-for-tab=\"Diff\"&gt;Diff&lt;/button&gt;\n&lt;button class=\"tab-button\" data-for-tab=\"Code\"&gt;Code&lt;/button&gt;\n&lt;button class=\"tab-button\" data-for-tab=\"Preview\"&gt;Preview&lt;/button&gt;\n&lt;button class=\"tab-button\" data-for-tab=\"Echo\"&gt;Echo&lt;/button&gt;\n&lt;/div&gt;\n&lt;div class=\"tab-content active\" data-tab=\"Diff\"&gt;\n&lt;div id=\"zdhvxm\"&gt;&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=\"tab-content\" data-tab=\"Code\"&gt;\n&lt;div id=\"zggbsh\"&gt;&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=\"tab-content\" data-tab=\"Preview\"&gt;\n&lt;div id=\"znmxpt\"&gt;&lt;/div&gt;\n&lt;/div&gt;\n&lt;div class=\"tab-content\" data-tab=\"Echo\"&gt;\n&lt;div id=\"zqjgnk\"&gt;&lt;/div&gt;\n&lt;/div&gt;\n&lt;/div&gt;\n&lt;div id=\"zxuxcr\"&gt;&lt;/div&gt;</code></pre>\n</div>\n<div class=\"tab-content\" data-tab=\"Hide\">\n\n</div>\n</div></div>"
+  } ]
+}, {
+  "role" : "user",
+  "content" : [ {
+    "type" : "text",
+    "text" : "Can it be improved using a stream ? "
+  } ]
+} ], "Mixtral8x7bInstructV01" ]

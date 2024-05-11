@@ -1,0 +1,1 @@
+{"model":"Mixtral8x7bInstructV01","parsingModel":"GPT35Turbo","temperature":0.1,"budget":2.0,"taskPlanningEnabled":false,"shellCommandTaskEnabled":true}

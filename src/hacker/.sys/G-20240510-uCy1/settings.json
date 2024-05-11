@@ -1,0 +1,1 @@
+{"model":"LLaMA370bInstructAWS","parsingModel":"GPT35Turbo","temperature":0.1,"budget":2.0,"taskPlanningEnabled":false,"shellCommandTaskEnabled":false}
